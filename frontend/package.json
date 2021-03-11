@@ -7,6 +7,7 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
+    "antd-mobile": "^2.3.4",
     "bn.js": "^5.1.1",
     "near-api-js": "^0.32.0",
     "node-sass": "^4.0.0",
@@ -19,9 +20,9 @@
     "react-switch": "^5.0.1"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
+    "start": "react-app-rewired start",
+    "build": "react-app-rewired build",
+    "test": "react-app-rewired test --env=jsdom",
     "eject": "react-scripts eject",
     "deploy": "yarn build && gh-pages -d build"
   },
@@ -41,6 +42,9 @@
     ]
   },
   "devDependencies": {
-    "gh-pages": "^2.2.0"
+    "babel-plugin-import": "^1.13.3",
+    "customize-cra": "^1.0.0",
+    "gh-pages": "^2.2.0",
+    "react-app-rewired": "^2.1.8"
   }
 }

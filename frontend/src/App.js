@@ -868,7 +868,7 @@ class App extends React.Component {
     ) : "";
     return (
       <div>
-        <div class="header">
+        <div className="header">
           <h2>{Avocado} Berry Club {Banana}</h2>{' '}
           <a
             className="btn btn-outline-none"
