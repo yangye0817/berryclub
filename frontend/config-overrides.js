@@ -4,7 +4,9 @@ const {
     disableEsLint,
     addBundleVisualizer,
     addWebpackAlias,
-    adjustWorkbox
+    adjustWorkbox,
+    fixBabelImports,
+    addLessLoader,
   } = require("customize-cra");
   const path = require("path");
   
@@ -22,6 +24,7 @@ const {
     addWebpackAlias({
       ["ag-grid-react$"]: path.resolve(__dirname, "src/shared/agGridWrapper.js")
     }),
+
   
     // adjust the underlying workbox
     adjustWorkbox(wb =>
@@ -29,5 +32,14 @@ const {
         skipWaiting: true,
         exclude: (wb.exclude || []).concat("index.html")
       })
-    )
+    ),
+
+    fixBabelImports("import", {
+      libraryName: "antd-mobile", libraryDirectory: "es", style: true // change importing css to less
+    }),
+    addLessLoader({
+      javascriptEnabled: true,
+      // modifyVars: { "@primary-color": "#1DA57A" }
+    })
+  
   );

@@ -1,13 +1,8 @@
 import React, { Component } from 'react';
 import { HashRouter as Router, Link, Route } from 'react-router-dom';
 import App from './App';
+import Home from './pages/Home';
 
-
-const Home = () => (
-  <div>
-    <h2>Home</h2>
-  </div>
-)
 
 const About = () => (
   <div>
@@ -30,7 +25,7 @@ class R extends Component {
           <Link to="/About">About</Link>
           <Link to="/Product">Product</Link>
           <hr/>
-          <Route path="/" exact component={App}></Route>
+          <Route path="/" exact component={Home}></Route>
           <Route path="/about" component={About}></Route>
           <Route path="/product" component={Product}></Route>
         </div>
